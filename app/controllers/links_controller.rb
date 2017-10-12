@@ -30,6 +30,7 @@ before_action :require_login
     @link = Link.new
     @link.original_url = params["original_url"]
     @link.user_id = params["user_id"]
+    @link.number_of_hits = 0
     require 'securerandom'
     @link.short_url = SecureRandom.urlsafe_base64(5)
 

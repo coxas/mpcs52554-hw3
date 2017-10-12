@@ -58,7 +58,11 @@ li {
     padding-top: 10px;
     padding-bottom: 0px;
     font-size: 20px;
-    color: #2F4994;
+    color: #fff;
+}
+
+a {
+    color: #461F67;
 }
 #donate {
     float: right;

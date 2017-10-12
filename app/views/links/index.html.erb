@@ -7,7 +7,7 @@
     <% @links.each do |l| %>
         <h4><span class="underline"><%="Link \##{l.id}" %></span></h4>
         <p class="top_padding">Original URL: <%= l.original_url %></p>
-        <p>Short URL: <%= l.short_url %></p>
+        <p>Short URL: <%=link_to "#{l.short_url}", "/links/#{l.short_url}" %>
         <p>Number of hits: <%= l.number_of_hits %>
         
 
