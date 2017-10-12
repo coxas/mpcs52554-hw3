@@ -30,7 +30,7 @@ body {
     right: 0;
     margin-top: 20px;
     margin-right: 20px;
-    background-color: #2F4994;
+    background-color: #158BC9;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -43,7 +43,7 @@ body {
 
 .button:hover {
     background-color: white;
-    color: #2F4994;
+    color: #158BC9;
 }
 
 ul {
@@ -64,7 +64,7 @@ li {
     float: right;
 }
 .dark_background {
-    background-color: #2F4994;
+    background-color: #158BC9;
     /*padding-top: 10px;*/
     color: #ffffff;
     padding-bottom: 30px;

@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     # cookies.delete("user_id")
     # cookies["user_id"] = nil
     reset_session
-    redirect_to root_url, notice: "Thanks for supporting RuPaul 2020!"
+    redirect_to root_url, notice: "Thanks for using Shortify!"
   end
 
 end

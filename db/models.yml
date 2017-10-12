@@ -1,16 +1,10 @@
-Donation
+Link
     user_id: integer
-    amount: integer
-    message: text
-    card_number: string
+    original_url: text
+    short_url: text
     created_at: datetime
     updated_at: datetime
-
-History
-    user_id: integer
-    donation_id: integer
-    amount: integer
-    card_number: string
+    number_of_hits: integer
 
 User
     name: string

@@ -9,7 +9,7 @@ end
 # Not intended for real-life production environments!
 gem 'ez', '~> 1.5'
 
-ruby '2.3.4'
+
 gem 'rails', '~> 5.1.2'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
