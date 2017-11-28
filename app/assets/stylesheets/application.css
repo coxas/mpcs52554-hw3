@@ -56,8 +56,8 @@ li {
     padding-right: 50px;
     padding-top: 10px;
     padding-bottom: 0px;
-    font-size: 30px;
-    color: ##158BC9;
+    font-size: 15px;
+    color: #158BC9;
 }
 
 a {
@@ -99,9 +99,9 @@ a {
 }
 
 .uslist {
-    /*color: white;
+    color: black;
     font-size: 20px;
-    list-style: none;*/
+    list-style: none;
 }
 
 .left {
