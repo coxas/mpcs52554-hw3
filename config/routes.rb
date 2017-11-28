@@ -3,15 +3,21 @@ Rails.application.routes.draw do
   root 'userstories#index'
 
   get '/help' => 'userstories#show'
-  
-  # get '[params: "short_url"]' => 'links#show'
-  
+    
   get '/sessions/new' => 'sessions#new', as: 'new_session'
   post '/sessions' => 'sessions#create'
 
-  delete '/logout' => 'sessions#destroy'
+  get '/api/inventory' => 'items#index'
+  get 'api/inventory/:sku' => 'items#show'
+  post 'api/inventory/' => 'items#create'
 
-  resources :links
+  get '/user/show' => 'users#show'
+
+  delete '/logout' => 'sessions#destroy'
+  delete '/users/remove' => 'users#destroy'
+
+  resources :items
+  resources :apikeys
   resources :users
 
 end

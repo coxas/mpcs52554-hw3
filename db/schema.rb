@@ -12,14 +12,20 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "links", force: :cascade do |t|
+  create_table "apikeys", force: :cascade do |t|
     t.integer "user_id"
-    t.text "original_url"
-    t.text "short_url"
+    t.text "key"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "number_of_hits"
-    t.index ["user_id"], name: "index_links_on_user_id"
+    t.index ["user_id"], name: "index_apikeys_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "status"
+    t.integer "sku"
+    t.integer "quantity"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,6 +34,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "api_key"
   end
 
 end

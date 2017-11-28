@@ -1,15 +1,6 @@
 <div class="row dark_background center">
-  <h2 class="center">Your Shortified URLs</h2>
-  
-<% if @links.length == 0 %>
-    <h4 class="center">You haven't shortified any URLs yet! <%= link_to 'Shortify a URL', "/links/new" %> today!</h4>
- <% else %>
-    <% @links.each do |l| %>
-        <h4><span class="underline"><%="Link \##{l.id}" %></span></h4>
-        <p class="top_padding">Original URL: $<%= l.original_url %></p>
-        <p>Created by: <%= l.user.name %></p>
-        <!-- <a href="/links/edit">Edit this message</a> -->
+  <h2 class="center">Welcome to Warehouse on the Web.</h2>
+  <% user = User.find_by_id(session["user_id"]) %>
+    <p>Your API key is <%= user.api_key %> </li>
 
-  <% end %>
-<% end %>
 </div>

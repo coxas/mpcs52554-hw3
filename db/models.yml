@@ -1,17 +1,23 @@
-Link
-    user_id: integer
-    original_url: text
-    short_url: text
-    created_at: datetime
-    updated_at: datetime
-    number_of_hits: integer
-
 User
     name: string
     email: string
     password_digest: string
+    api_key: string
     created_at: datetime
     updated_at: datetime
+
+Apikey
+    user_id: integer
+    key: text
+    created_at: datetime
+    updated_at: datetime
+
+Item
+    user_id: integer
+    status: string
+    sku: integer
+    quantity: integer
+
 
 
 # This file allows you to specify your domain model

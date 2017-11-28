@@ -4,14 +4,15 @@
             <% if session["user_id"].present? %>
                 <% user = User.find_by_id(session["user_id"]) %>
                 <li>Welcome, <%= user.name %> </li>
-                <li><%= link_to 'Home', "/" %> </li>   
-                <li><%= link_to 'Your Shortened URLs', "/links" %></li>
+                <li><%= link_to 'Home', "/" %> </li>  
+                <li><%= link_to 'Your API key', "/user/show" %> </li>
+                <li><%= link_to 'Your Items', "/api/inventory"%> </li>
                 <li><%=link_to "Sign Out", "/logout", method: :delete %></li>
+                <li><%=link_to "Delete Your Account", "/users/remove", method: :delete %></li>
             <% else %>
                 <li><%= link_to 'Home', "/" %> </li>   
                 <li><%= link_to "Sign Up", "/users/new" %></li>
                 <li><%= link_to "Sign In", "/sessions/new" %></li>
-            <% end %>
-            <li id="shortify"><%= link_to 'Shortify a URL!', "/links/new" %> </li>
+            <% end %>         
         </ul>
     </nav>

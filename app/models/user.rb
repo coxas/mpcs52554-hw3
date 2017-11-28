@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :password, presence: true
   
   # has_many :histories
-  has_many :links
+  has_many :items
 
   
 
