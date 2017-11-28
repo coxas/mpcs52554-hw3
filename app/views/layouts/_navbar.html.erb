@@ -6,13 +6,14 @@
                 <li>Welcome, <%= user.name %> </li>
                 <li><%= link_to 'Home', "/" %> </li>  
                 <li><%= link_to 'Your API key', "/user/show" %> </li>
-                <li><%= link_to 'Your Items', "/api/inventory"%> </li>
                 <li><%=link_to "Sign Out", "/logout", method: :delete %></li>
                 <li><%=link_to "Delete Your Account", "/users/remove", method: :delete %></li>
+                <li><%= link_to 'Documentation', "/help" %></li>
             <% else %>
                 <li><%= link_to 'Home', "/" %> </li>   
                 <li><%= link_to "Sign Up", "/users/new" %></li>
                 <li><%= link_to "Sign In", "/sessions/new" %></li>
+                <li><%= link_to 'Documentation', "/help" %></li>
             <% end %>         
         </ul>
     </nav>
