@@ -47,7 +47,7 @@ body {
 }
 
 ul {
-    background-color: #fff;
+    /*background-color: #fff;*/
     padding-left: 10px;
 }
 li {
@@ -57,7 +57,7 @@ li {
     padding-right: 50px;
     padding-top: 10px;
     padding-bottom: 0px;
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
 }
 
