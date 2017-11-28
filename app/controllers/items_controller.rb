@@ -57,11 +57,11 @@ class ItemsController < ApplicationController
       new_quant = prev_quant.to_i + add_quant.to_i
       @item.quantity = new_quant
       if @item.save 
-        msg = "Thanks for submitting your POST request."
-        render json: @item
+        msg = {"Thanks for submitting your POST request.":""}
+        render json: msg
       else 
-        msg = "Error: Your POST request was not processed."
-        render json: @item
+        msg = {"Error": "Your POST request was not processed."}
+        render json: msg
       end 
     else 
       @item = Item.new
@@ -72,15 +72,17 @@ class ItemsController < ApplicationController
       @item.sku = params["sku"]
       @item.quantity = params["quantity"]
       if @item.save
-        msg = "Thanks for submitting your POST request."
-        render json: @item
+        msg = {"Thanks for submitting your POST request.": ""}
+        render json: msg
       else 
-        render text: "Error: Your POST request was not processed."
+        msg = {"Error": "Your POST request was not processed."}
+        render json: msg
       end 
     end
 
     else 
-      render text: "Error: Your user was not found in the database."
+      msg = {"Error": "Your user was not found in the database."}
+      render json: msg
     end 
   end 
       

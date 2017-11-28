@@ -32,23 +32,23 @@ class OrdersController < ApplicationController
             minus_quant = params["quantity"]
             new_quant = prev_quant.to_i - minus_quant.to_i
             @item2.quantity = new_quant
-            @item2.save
             if new_quant < 0 
-                msg = "You don't have enough items in stock!"
-                render json: @item
+                msg = {"Error":"You don't have enough items in stock!"}
+                render json: msg
             else
+                @item2.save
                 @order = Order.new
                 @order.user_id = @user.id
                 @order.quantity = params["quantity"]
                 @order.sku = params["sku"]
                 @order.address = params["address"]
                 if @item.save && @order.save
-                    msg = "Thanks for submitting your post request!"
-                    render json: @item
+                    msg = {"Thanks for submitting your post request!":""}
+                    render json: msg
                     # render json: @order
                 else 
-                    msg = "Error: Your POST request was not processed."
-                    render json: @item
+                    msg = {"Error": "Your POST request was not processed."}
+                    render json: msg
                 end 
             end 
         else 
@@ -64,23 +64,23 @@ class OrdersController < ApplicationController
             minus_quant = params["quantity"]
             new_quant = prev_quant.to_i - minus_quant.to_i
             @item2.quantity = new_quant
-            @item2.save
             if new_quant < 0 
-                msg = "You don't have enough items in stock!"
-                render json: @item
-            else
+                msg = {"Error": "You don't have enough items in stock!"}
+                render json: msg
+            else    
+                @item2.save
                 @order = Order.new
                 @order.user_id = @user.id
                 @order.quantity = params["quantity"]
                 @order.sku = params["sku"]
                 @order.address = params["address"]
                 if @item.save && @order.save
-                    msg = "Thanks for submitting your post request!"
-                    render json: @item
+                    msg = {"Thanks for submitting your post request!": ""}
+                    render json: msg
                     # render json: @order
                 else 
-                    msg = "Error: Your POST request was not processed."
-                    render json: @item
+                    msg = {"Error": "Your POST request was not processed."}
+                    render json: msg
                 end 
             end 
         end
