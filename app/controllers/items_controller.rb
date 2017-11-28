@@ -44,8 +44,55 @@ class ItemsController < ApplicationController
 
   def create
     Rails.logger.warn params
-    @d = {}
-    render :json => @d
+    user_api_key = request.query_parameters["apikey"]
+    sku = params["sku"]
+    status = params["status"]
+    quantity = params["quantity"]
+    @user = User.find_by(api_key: user_api_key) 
+    if @user != nil
+     @item = Item.find_by(user_id: @user.id, sku: sku, status: status)
+     if @item != nil
+      prev_quant = @item.quantity
+      add_quant = params["quantity"]
+      new_quant = prev_quant.to_i + add_quant.to_i
+      @item.quantity = new_quant
+      if @item.save 
+        msg = "Thanks for submitting your POST request."
+        render json: @item
+      else 
+        msg = "Error: Your POST request was not processed."
+        render json: @item
+      end 
+    else 
+      @item = Item.new
+      user_api_key = request.query_parameters["apikey"]
+      @user = User.find_by(api_key: user_api_key)
+      @item.user_id = @user.id
+      @item.status = params["status"]
+      @item.sku = params["sku"]
+      @item.quantity = params["quantity"]
+      if @item.save
+        msg = "Thanks for submitting your POST request."
+        render json: @item
+      else 
+        render text: "Error: Your POST request was not processed."
+      end 
+    end
+
+    else 
+      render text: "Error: Your user was not found in the database."
+    end 
+  end 
+      
+    
+
+
+
+
+    # else
+    #  redirect_to "/", notice: 'There was an error retrieving your items.'
+    # end 
+    
     # @item = params[:]
   #   @item = Item.find_by(item: params["sku"])
 
@@ -69,7 +116,7 @@ class ItemsController < ApplicationController
   #       redirect_to "/items/new", notice: 'Oops, something went wrong.'
   #     end
   #   end
-  end 
+  # end 
 
   def destroy 
 

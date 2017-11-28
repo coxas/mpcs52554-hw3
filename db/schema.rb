@@ -23,9 +23,17 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "items", force: :cascade do |t|
     t.integer "user_id"
     t.string "status"
-    t.integer "sku"
+    t.string "sku"
     t.integer "quantity"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "sku"
+    t.integer "quantity"
+    t.string "address"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

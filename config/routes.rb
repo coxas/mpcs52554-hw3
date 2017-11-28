@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/api/inventory' => 'items#index'
   get 'api/inventory/:sku' => 'items#show'
   post 'api/inventory/' => 'items#create'
+  post 'api/orders' => 'orders#create'
 
   get '/user/show' => 'users#show'
 

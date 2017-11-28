@@ -15,10 +15,14 @@ Apikey
 Item
     user_id: integer
     status: string
-    sku: integer
+    sku: string
     quantity: integer
 
-
+Order
+    user_id: integer
+    sku: string
+    quantity: integer
+    address: string
 
 # This file allows you to specify your domain model
 # in .yml format.  Use `rails db:migrate` to apply your
