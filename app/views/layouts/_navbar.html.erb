@@ -3,17 +3,17 @@
         <ul class="josefin">
             <% if session["user_id"].present? %>
                 <% user = User.find_by_id(session["user_id"]) %>
-                <li class="navlist">Welcome, <%= user.name %> </li>
-                <li class="navlist"><%= link_to 'Home', "/" %> </li>  
-                <li class="navlist"><%= link_to 'Your API key', "/user/show" %> </li>
-                <li class="navlist"><%=link_to "Sign Out", "/logout", method: :delete %></li>
-                <li class="navlist"><%=link_to "Delete Your Account", "/users/remove", method: :delete %></li>
-                <li class="navlist"><%= link_to 'Documentation', "/help" %></li>
+                <li class="navlist purple">Welcome, <%= user.name %> </li>
+                <li class="navlist purple"><%= link_to 'Home', "/" %> </li>  
+                <li class="navlist purple"><%= link_to 'Your API key', "/user/show" %> </li>
+                <li class="navlist purple"><%=link_to "Sign Out", "/logout", method: :delete %></li>
+                <li class="navlist purple"><%=link_to "Delete Your Account", "/users/remove", method: :delete %></li>
+                <li class="navlist purple"><%= link_to 'Documentation', "/help" %></li>
             <% else %>
-                <li class="navlist"><%= link_to 'Home', "/" %> </li>   
-                <li class="navlist"><%= link_to "Sign Up", "/users/new" %></li>
-                <li class="navlist"><%= link_to "Sign In", "/sessions/new" %></li>
-                <li class="navlist"><%= link_to 'Documentation', "/help" %></li>
+                <li class="navlist purple"><%= link_to 'Home', "/" %> </li>   
+                <li class="navlist purple"><%= link_to "Sign Up", "/users/new" %></li>
+                <li class="navlist purple"><%= link_to "Sign In", "/sessions/new" %></li>
+                <li class="navlist purple"><%= link_to 'Documentation', "/help" %></li>
             <% end %>         
         </ul>
     </nav>
