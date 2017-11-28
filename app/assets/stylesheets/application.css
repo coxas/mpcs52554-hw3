@@ -49,6 +49,7 @@ body {
 ul {
     padding-left: 10px;
     font-size: 15px;
+    margin-right: 10px;
 }
 li {
     display: inline-block;
@@ -59,6 +60,9 @@ li {
     padding-bottom: 0px;
     font-size: 15px;
     color: #158BC9;
+}
+.doc-list {
+    font-size: 20px;
 }
 
 a {
