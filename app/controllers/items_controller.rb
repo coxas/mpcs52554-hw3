@@ -20,7 +20,8 @@ class ItemsController < ApplicationController
       @items = Item.where(user_id: @user.id)
       render :json => @items
     else
-      redirect_to "/", notice: 'There was an error retrieving your data.'
+       msg = {'Error':'There was an error retrieving your items.'}
+       render json: msg
     end 
   end
 
@@ -34,7 +35,8 @@ class ItemsController < ApplicationController
      @items = Item.where(user_id: @user.id, sku: sku)
      render :json => @items
     else
-     redirect_to "/", notice: 'There was an error retrieving your items.'
+     msg = {'Error':'There was an error retrieving your items.'}
+     render json: msg
     end 
   end 
 
