@@ -85,7 +85,8 @@ class OrdersController < ApplicationController
             end 
         end
     else     
-         render text: "Error: Your user was not found in the database."
+         msg =  {"Error": "Your user was not found in the database."}
+         render json: msg
     end 
 end 
 end 
