@@ -47,7 +47,6 @@ body {
 }
 
 ul {
-    /*background-color: #fff;*/
     padding-left: 10px;
 }
 li {
@@ -58,7 +57,7 @@ li {
     padding-top: 10px;
     padding-bottom: 0px;
     font-size: 30px;
-    color: #fff;
+    color: ##158BC9;
 }
 
 a {
@@ -100,9 +99,9 @@ a {
 }
 
 .uslist {
-    color: white;
+    /*color: white;
     font-size: 20px;
-    list-style: none;
+    list-style: none;*/
 }
 
 .left {
