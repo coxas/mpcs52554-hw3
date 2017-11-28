@@ -48,6 +48,7 @@ body {
 
 ul {
     padding-left: 10px;
+    font-size: 15px;
 }
 li {
     display: inline-block;
