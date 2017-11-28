@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+body {
+    margin: 0px !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#imagewrap {
+    display: inline-block;
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    top: 15;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-color: #158BC9;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+.button:hover {
+    background-color: white;
+    color: #158BC9;
+}
+
+ul {
+    padding-left: 10px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+li {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-size: 15px;
+    color: #158BC9;
+}
+.doc-list {
+    font-size: 20px;
+}
+
+a {
+    color: #461F67;
+}
+#donate {
+    float: right;
+}
+.dark_background {
+    background-color: #158BC9;
+    /*padding-top: 10px;*/
+    color: #ffffff;
+    padding-bottom: 30px;
+    overflow-y: hidden;
+}
+.left_padding {
+    padding-left: 30px;
+}
+.bottom_padding {
+    padding-bottom: 20px;
+}
+.top_padding {
+    padding-top: 10px;
+}
+.center {
+    text-align: center;
+}
+.skinny {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+}
+.underline {
+    border-bottom: 2px solid white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+    margin-bottom: 8px;
+}
+
+.uslist {
+    color: black;
+    font-size: 20px;
+    list-style: none;
+}
+
+.left {
+    text-align: left;
+}
+
+/*I know, I know, mobile first, but I was lazy*/
+@media only screen and (max-width: 1000px) {
+    li {
+        display: block;
+        margin: auto;
+        font-size: 15px;
+    }
+    #donate {
+        float: none;
+    }
+}
+#notice {
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    color: #849adb;
+    text-align: center;
+}
+
+#copyright {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 10px;
+    font-size: 15px;
+    color: #2F4994;
+}
